@@ -1,0 +1,153 @@
+<?php                
+class SelectData {
+    public $id;
+    public $title;
+    public $name;
+    public $post;
+    
+    function dbConnect($id) {
+	$dbh = new PDO('mysql:host=localhost;dbname=nedoboard', 'root', 'ololo666');
+	$sql = "SELECT * FROM Thread where id=$id";
+        $q = $dbh->prepare($sql);
+	$q->execute();
+	$done= $q->fetch();
+	
+	$this->id = $done[0];
+	$this->title = $done[1];
+	$this->name = $done[2];
+	$this->post = $done[3];
+    }
+    
+
+}
+    function countRows($table) {
+	$dbh = new PDO('mysql:host=localhost;dbname=nedoboard', 'root', 'ololo666');
+	$sql = "SELECT COUNT(*) FROM $table";
+        $q = $dbh->prepare($sql);
+	$q->execute();
+	$done= $q->fetchAll();
+	return $done[0][0];
+	}
+
+
+    function sortThreads() {
+	$dbh = new PDO('mysql:host=localhost;dbname=nedoboard', 'root', 'ololo666');
+	$sql = "SELECT id FROM Thread";
+        $q = $dbh->prepare($sql);
+	$q->execute();
+	$done= $q->fetchAll();
+	
+	$threadSort = array();
+	$threads = countRows("Thread");
+	for ($i=0;$i<$threads;$i++) {
+	array_push($threadSort, $done[$i][0]);
+	}
+  
+	rsort($threadSort);
+	
+ 	return $threadSort;
+	
+    }
+    
+    function getElement($el) { // Без этого велосипеда dbConnect() не раскидывал значения по свойствам напрямую из массива
+	$sortedThreads = sortThreads();
+	return $sortedThreads[$el];
+    }
+    
+        function countCommentRows($thread_id) {
+	    $dbh = new PDO('mysql:host=localhost;dbname=nedoboard', 'root', 'ololo666');
+	    $sql = "SELECT COUNT(*) FROM Comment where thread_id=$thread_id";
+	    $q = $dbh->prepare($sql);
+	    $q->execute();
+	    $done= $q->fetchAll();
+	    return $done[0][0];
+	}
+
+                
+function postThread($el) {
+echo '<div class="b-threads-list">
+        <div class="b-thread">
+            <div class="b-post first-post">            
+                <div class="post-number">';
+
+		    $id1 = new SelectData();		    
+		    $id1->dbConnect(getElement($el));
+		    echo "#".$id1->id;
+                
+          echo '</div>
+                <h2 class="thread-topic">';
+		    echo $id1->title;
+           echo '</h2><br><br>';
+		    echo $id1->post;
+      echo '</div>
+
+            <div class="b-post-info-line">
+                Пропущено ';
+                echo countCommentRows(getElement($el));
+                echo 'комментариев
+            </div>
+
+
+            <div class="b-post-actions clearfix">
+                <a href="" class="button-action button-reply">Добавить комментарий</a>';
+                echo "<a href='$id1->id'"; echo 'class="button-action button-show-thread">Перейти в тред</a>
+            </div>
+        </div>';
+}
+    
+    
+
+
+
+    
+?>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Программирование // доска обсуждений</title>
+    <link rel="stylesheet" href="../board-markup/board-style.css">
+</head>
+<body>
+
+<div class="l-header">
+    <div class="wrap">
+        <h1>Программирование</h1>
+    </div>
+    <div class="overlay"></div>
+</div>
+
+<div class="page-threads-list">
+    <div class="b-top-actions clearfix">
+        <a href="add-thread" class="button button-action">Создать новый тред</a>
+    </div>
+<?php
+postThread(0);
+postThread(1);
+postThread(2);
+postThread(3);
+postThread(4);
+
+
+?>
+        
+    </div>
+
+    <div class="b-pager"> 
+        <span class="label">Страницы:</span> <span class="current">1</span>
+        <a href="">2</a>
+        <a href="">3</a>
+        <a href="">4</a>
+        <a href="">5</a>
+        <a href="">6</a>
+        <a href="">7</a>
+        <a href="">8</a>
+        <a href="">9</a>
+        <span class="hellip">…</span>
+        <a href="">124</a>
+    </div>
+
+    <div class="b-footer"></div>
+</div>    
+</body>
+</html>

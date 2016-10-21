@@ -1,0 +1,40 @@
+body {
+  background-color: black;
+}
+
+form {
+  margin-top: -50px;
+}
+
+input{
+  border-radius: 25px;
+  padding: 0px 0px 0px 5px;
+}
+
+.reply{
+  margin-top: -50px;
+  margin-right: 20px;
+  width: 20%;
+  height: 25px;
+}
+
+.your_message {
+  height: 80px;
+  margin-top: 80px;
+  margin-right: 20px;
+  width: 65%;
+  text-align: justify;
+}
+
+.send {
+  font-weight: bold;
+  padding: 10px;
+  margin-top: 60px;
+  height: 80px;
+}
+
+.exit {
+  padding: 0px 5px;
+  font-weight: bold;
+  margin-top: 35px;
+}
