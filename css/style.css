@@ -75,6 +75,8 @@ li{
 
 .main-post{
   display: inline-block;
+  float: none;
+  width: 100%;
   border: 1px solid white;
   border-radius: 20px;
   margin-bottom: 20px;
@@ -83,6 +85,21 @@ li{
   text-align: justify;
 }
 
+.main-title {
+
+}
+
+.main-img-mini {
+
+}
+
+.main-descr {
+
+}
+
+.main-timestamp {
+
+}
 
 a{
   text-decoration: none;

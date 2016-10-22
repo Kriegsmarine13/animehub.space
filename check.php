@@ -41,7 +41,7 @@
 //			$_SESSION['name']=$myrow["name"];
 //			$_SESSION['id']=$myrow["id_user"];
 //			setcookie("testCookie", $_SESSION['id'], time()+ 3600, "/", "animehub.space"); //sending ID cookie to establish persistent connection for 1 HOUR
-//			header('Refresh: 1; main.php');
+//			header('Refresh: 1; main.tpl');
 //		} else {
 //			exit("<body><div align='center'><br/>There is no such password</div></body>");
 //			}
@@ -81,7 +81,7 @@
 //    $cookieHash = $_COOKIE['authCookie'];
 //    $result = mysqli_query($dbcon, "SELECT * FROM users WHERE hash='".$cookieHash."'");
 //    if($result) {
-//        header("Refresh: 1, main.php");
+//        header("Refresh: 1, main.tpl");
 //    }
 //    /* Результаты занесения переменных */
 //    echo "<br><p>Session ID: ".$sessionId."</p><br>"; // otladka
@@ -103,7 +103,7 @@ if(password_verify($passInput, $stringHash)) {
 //    echo "Verified. My hash is: ".$stringHash;
     setcookie("authCookie", $stringHash, time() + 3600, "/", "animehub.space");
     $_SESSION['name'] = $myrow['name']; // ОПАСНО! ЗАДАВАТЬ ЗНАЧЕНИЕ $_SESSION['name'] ЭССЕНЦИАЛЬНО НЕБХОДИМО ДЛЯ РАБОТЫ ЧАТА, А ИМЕННО ADD.PHP
-    header("Location: main/");
+    header("Location: main.php/");
 } else {
     echo "Not Verified. My Hash is: ".$stringHash;
 }

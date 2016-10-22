@@ -11,11 +11,13 @@
 <h1><?php echo ("Success! Welcome, ").$_SESSION['name']; ?></h1>
 <div class="left-menu">
     <ul>
-        <li><a href="add_news.php">Добавление новости</a></li>
+        <li><a href="first_menu/add_news.php">Добавление новости</a></li>
         <li>Вариант 2</li>
         <li>Вариант 3</li>
     </ul>
-</div>
+</div></div>
+
+
 <div class="main-menu">
 <h2>Здесь будет выводиться всякая бытовая хуйня, не знаю зачем</h2>
     <?php
@@ -33,9 +35,9 @@
 <div class="options-menu">
     <ul>
         <?php
-        for($i=0; $i<10; $i++){
-            echo("<li>Option ".$i."</li><br>");
-        }
+            for($i=0; $i<10; $i++){
+                echo("<li>Option ".$i."</li><br>");
+            }
         ?>
     </ul>
 </div>
