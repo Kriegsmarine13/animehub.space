@@ -19,10 +19,11 @@ session_start();
 
 
 <div class="main-menu">
-    <form action="readyNewsScript.php" method="POST">
+    <form enctype="multipart/form-data" action="readyNewsScript.php" method="POST">
         <label for="img_mini">
+            <input type="hidden" name="MAX_FILE_SIZE" value="25000">
             Preview Image: <input type="file" name="img_mini" id="img_mini">
-        </label>
+        </label><br>
         <br><br>
         <label for="img_main">
             Main Image: <input type="file" name="img_main" id="img_main">

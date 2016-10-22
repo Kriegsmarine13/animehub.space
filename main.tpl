@@ -10,11 +10,11 @@
     <img class="img-mini" width="110" src="../img/dollars_logo.jpg" alt="dollars_logo">
     </a>
     </div>
-    <h1>Добро пожаловать в убежище</h1>
+    <h1>Добро пожаловать в твоё убежище</h1>
     <div class="menu-block">
       Навигация
       <ul type="none">
-        <li><a href="temp.php">Новости</a></li>
+        <li><a href="/temp.php">Новости</a></li>
         <li><a href="artists_tpl.php">Художники</a></li>
         <li><a href="php/droptables.php">Грядущие встречи</a></li>
         <li><a href="#">Прошлые встречи</a></li>
@@ -24,13 +24,9 @@
       </ul>
     </div>
     <div class="main-block">
-      <div class="main-post">
-        <div class="main-title">%main_title%</div>
-        <div class="main-img-mini"><img src="$imgPath"></div>
-        <div class="main-descr">%small_descr%</div>
-        <div class="main-timestamp">%timestamp%</div>
-      </div>
-      <div class="main-post">New test new test new test</div>
+      %outputScript%
+      %main_post%
+      %main_post%
     </div>
   <script type="text/javascript" src="js/script.js"></script>
 </body>

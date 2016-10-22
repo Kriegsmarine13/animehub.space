@@ -19,7 +19,7 @@
 
 
 <div class="main-menu">
-<h2>Здесь будет выводиться всякая бытовая хуйня, не знаю зачем</h2>
+<h2>Здесь будет выводиться всякая бытовая хрень, не знаю зачем</h2>
     <?php
     require_once("../php/meta.php");
         $dbcon = mysqli_connect($dbserver, $dblogin, $dbpass, $dbname);
