@@ -1,6 +1,6 @@
 <?php 
 	if($_COOKIE["authCookie"]) {
-		header('Refresh: 0; main.php');
+		header('Refresh: 0; main');
 		exit();
 	}
 ?>

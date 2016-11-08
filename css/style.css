@@ -4,7 +4,6 @@ body{
 }
 
 img{
-  margin-top: 5%;
 }
 
 .img-mini{
@@ -83,22 +82,47 @@ li{
   padding: 10px;
   color: #e3dbdb;
   text-align: justify;
+  position: relative;
 }
 
 .main-title {
-
+  display: inline-block;
+  float: right;
+  font-weight: bold;
+  font-size: 20px;
+  margin-right: 5%;
+  margin-bottom: 2%;
 }
 
 .main-img-mini {
+  width: 50%;
+  display: inline-block;
+  float: left;
+}
 
+.main-img-mini img{
+  width: 100%;
+  max-height: 40%;
+  padding: 5px;
 }
 
 .main-descr {
-
+  display: inline-block;
+  float: right;
+  clear: right;
+  margin-right: 5%;
+  margin-bottom: 2%;
 }
 
 .main-timestamp {
-
+  display: inline-block;
+  float: right;
+  clear: right;
+  margin-right: 5%;
+  margin-bottom: 2%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 
 a{

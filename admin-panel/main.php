@@ -34,11 +34,12 @@
 </div>
 <div class="options-menu">
     <ul>
-        <?php
-            for($i=0; $i<10; $i++){
-                echo("<li>Option ".$i."</li><br>");
-            }
-        ?>
+        <li><a href="second_menu/time.php">Timestamp</a></li>
+        <li>Option 2</li>
+        <li>Option 3</li>
+        <li>Option 4</li>
+        <li>Option 5</li>
+        <li>Option 6</li>
     </ul>
 </div>
 </body>

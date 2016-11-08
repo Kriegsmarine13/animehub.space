@@ -103,7 +103,7 @@ if(password_verify($passInput, $stringHash)) {
 //    echo "Verified. My hash is: ".$stringHash;
     setcookie("authCookie", $stringHash, time() + 3600, "/", "animehub.space");
     $_SESSION['name'] = $myrow['name']; // ОПАСНО! ЗАДАВАТЬ ЗНАЧЕНИЕ $_SESSION['name'] ЭССЕНЦИАЛЬНО НЕБХОДИМО ДЛЯ РАБОТЫ ЧАТА, А ИМЕННО ADD.PHP
-    header("Location: main.php/");
+    header("Location: main/");
 } else {
     echo "Not Verified. My Hash is: ".$stringHash;
 }
