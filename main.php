@@ -22,11 +22,12 @@ if(!($_COOKIE["authCookie"])) {
       <ul type="none">
         <li><a href="/main/">Новости</a></li>
         <li><a href="artists_tpl.php">Художники</a></li>
-        <li><a href="php/droptables.php">Обзоры</a></li>
+        <li><a href="#">Обзоры</a></li>
         <li><a href="#">Рецензии</a></li>
         <li><a href="#">Аниме Релизы</a></li>
         <li><a href="#">Музыкальные релизы</a></li>
 		<li><a href="/Chat1/index.php">Чат</a></li>
+        <li><a href="/php/test.php">Test</a></li>
       </ul>
     </div>
     <div class="main-block">
@@ -43,7 +44,7 @@ if(!($_COOKIE["authCookie"])) {
         foreach($totalPosts as $totalPostCount) {
             $postsCount++;
         }
-        $num_pages = ceil($postsCount/$limit);
+        $num_pages = ceil($postsCount/5);
         $fromLimit = $limit - 5;
         $query = mysqli_query($dbcon, "SELECT * FROM main_news ORDER BY id DESC LIMIT $fromLimit, $limit");
         foreach($query as $post) {

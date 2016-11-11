@@ -6,6 +6,14 @@ body{
 img{
 }
 
+.main-logo {
+  margin-top: 5%;
+}
+
+.pass-field-main {
+  margin-left: -10%;
+}
+
 .img-mini{
   margin-top: 0;
 }
@@ -64,6 +72,7 @@ li{
 
 .main-block{
   display: block;
+  text-align: center;
   border: 5px solid white;
   border-radius: 20px;
   float: left;
@@ -87,6 +96,8 @@ li{
 
 .main-title {
   display: inline-block;
+  width: 40%;
+  text-align: center;
   float: right;
   font-weight: bold;
   font-size: 20px;
@@ -108,6 +119,8 @@ li{
 
 .main-descr {
   display: inline-block;
+  width: 40%;
+  text-align: justify;
   float: right;
   clear: right;
   margin-right: 5%;

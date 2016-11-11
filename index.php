@@ -16,10 +16,10 @@
   <body>
 
     <div align="center">
-    <img src="img/dollars_logo.jpg" alt="dollars_logo">
+    <img class="main-logo" src="img/dollars_logo.jpg" alt="dollars_logo">
     </div>
     <form action="check.php" method="post">
-      <label for="password">
+      <label class="pass-field-main" for="password">
         PASSWORD: <input class="input1" type="password" name="password" id="password">
       </label>
       <br>
