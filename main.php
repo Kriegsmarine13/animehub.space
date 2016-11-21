@@ -29,16 +29,16 @@
       $dbcon = mysqli_connect($dbserver, $dblogin, $dbpass, $dbname);
       $query = mysqli_query($dbcon, "SELECT * FROM main_news ORDER BY id DESC");
       foreach($query as $post) {
-    $resultContent = $post;
-    $titleData = $resultContent['title'];
-    $sDescrData = $resultContent['small_descr'];
-    $timeStampData = $resultContent['timestamp'];
-    $mainPost = "<div class=\"main-post\">
-      <div class=\"main-title\">$titleData</div>
-      <div class=\"main-img-mini\"><img src=\"$imgPath\"></div>
-      <div class=\"main-descr\">$sDescrData</div>
-      <div class=\"main-timestamp\">$timeStampData</div>
-    </div>";
+	    $resultContent = $post;
+	    $titleData = $resultContent['title'];
+	    $sDescrData = $resultContent['small_descr'];
+	    $timeStampData = $resultContent['timestamp'];
+	    $mainPost = "<div class=\"main-post\">
+	      <div class=\"main-title\">$titleData</div>
+	      <div class=\"main-img-mini\"><img src=\"$imgPath\"></div>
+	      <div class=\"main-descr\">$sDescrData</div>
+	      <div class=\"main-timestamp\">$timeStampData</div>
+	    </div>";
     echo $mainPost;
     }
       ?>
