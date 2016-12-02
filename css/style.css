@@ -81,6 +81,17 @@ li{
   padding: 10px 15px;
 }
 
+.inner-inner-news-body{
+    display: block;
+    text-align: center;
+    border: 5px solid white;
+    border-radius: 20px;
+    float: left;
+    margin-left: 30px;
+    width: 70%;
+    padding: 10px 15px;
+}
+
 .main-post{
   display: inline-block;
   float: none;
@@ -127,6 +138,11 @@ li{
   margin-bottom: 2%;
 }
 
+.main-link {
+    display: inline-block;
+    float: right;
+}
+
 .main-timestamp {
   display: inline-block;
   float: right;
@@ -163,4 +179,22 @@ a:hover{
   left: 25%;
   top: 25%;
   color: white;
+}
+
+.artists-general-panel {
+    padding: 20px;
+    display: inline-block;
+    width: 70%;
+    border: 2px solid white;
+    border-radius: 20px;
+}
+
+.artists-personal-panel{
+    padding: 5px;
+    display: inline-block;
+    width: 30%;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    border: 2px solid white;
+    border-radius:10px;
 }

@@ -97,14 +97,14 @@ session_start();
 include("php/meta.php");
 $dbcon = mysqli_connect($dbserver, $dblogin, $dbpass, $dbname);
 $result = mysqli_query($dbcon, "SELECT * FROM users WHERE 1");
-$myrow = mysqli_fetch_array($result);
-$stringHash = $myrow['hash'];
+$myrow = mysqli_fetch_assoc($result);
+$stringHash = $myrow['password'];
 if(password_verify($passInput, $stringHash)) {
 //    echo "Verified. My hash is: ".$stringHash;
     setcookie("authCookie", $stringHash, time() + 3600, "/", "animehub.space");
     $_SESSION['name'] = $myrow['name']; // ОПАСНО! ЗАДАВАТЬ ЗНАЧЕНИЕ $_SESSION['name'] ЭССЕНЦИАЛЬНО НЕБХОДИМО ДЛЯ РАБОТЫ ЧАТА, А ИМЕННО ADD.PHP
     header("Location: main/");
 } else {
-    echo "Not Verified. My Hash is: ".$stringHash;
+        echo "Not Verified. My Hash is: ".$myrow['password'];
 }
 //?>

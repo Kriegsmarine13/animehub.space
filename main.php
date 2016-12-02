@@ -21,7 +21,7 @@ if(!($_COOKIE["authCookie"])) {
       Навигация
       <ul type="none">
         <li><a href="/main/">Новости</a></li>
-        <li><a href="artists_tpl.php">Художники</a></li>
+        <li><a href="/artists">Художники</a></li>
         <li><a href="#">Обзоры</a></li>
         <li><a href="#">Рецензии</a></li>
         <li><a href="#">Аниме Релизы</a></li>
@@ -32,37 +32,19 @@ if(!($_COOKIE["authCookie"])) {
     </div>
     <div class="main-block">
         <?php
-        require ("php/meta.php");
-        $page = $_GET['page'];
-        if($page<1) {$page= $page + 1;}
-        $pageLimit = 5;
-        $limit = $pageLimit * $page;
-        $dbcon = mysqli_connect($dbserver, $dblogin, $dbpass, $dbname);
-        //Считаем общее количество постов в базе
-        $totalPosts = mysqli_query ($dbcon, "SELECT * FROM main_news WHERE 1");
-        $postsCount = 0;
-        foreach($totalPosts as $totalPostCount) {
-            $postsCount++;
-        }
-        $num_pages = ceil($postsCount/5);
-        $fromLimit = $limit - 5;
-        $query = mysqli_query($dbcon, "SELECT * FROM main_news ORDER BY id DESC LIMIT $fromLimit, $limit");
-        foreach($query as $post) {
-            $imgPath = $post['img_mini'];
-            $titleData = $post['title'];
-            $sDescrData = $post['small_descr'];
-            $timeStampData = $post['timestamp'];
-            $mainPost = "<div class=\"main-post\">
-              <div class=\"main-img-mini\"><img src=\"$imgPath\"></div>
-              <div class=\"main-title\">$titleData</div>
-              <div class=\"main-descr\">$sDescrData</div>
-              <div class=\"main-timestamp\">$timeStampData</div>
-              </div><br>";
-            echo $mainPost;
-        }
-        for($i=1;$i<=$num_pages;$i++) {
-            echo '<a href="?page='.$i.'">'.$i."</a>\n";
-        }
+        $url = $_SERVER['PHP_SELF'];
+        $url = rtrim($url, '/');
+        $url = explode('/', $url);
+        require('controllers'.$url[0].'/'.$url[1]);
+        $url = explode('.', $url[1]);
+        $controller = new $url[0];
+//        if(isset($url[2])){
+//          $controller->$url[1]($url[2]);
+//        } else {
+//          if(isset($url[1])) {
+//            $controller->$url[1]();
+//          }
+//        }
         ?>
     </div>
   <script type="text/javascript" src="js/script.js"></script>

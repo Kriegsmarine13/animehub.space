@@ -20,6 +20,10 @@ session_start();
 
 <div class="main-menu">
     <form enctype="multipart/form-data" action="readyNewsScript.php" method="POST">
+        <label for="link">
+            URL: <input type="text" name="link" id="link">
+        </label>
+        <br><br>
         <label for="img_mini">
             <input type="hidden" name="MAX_FILE_SIZE" value="5000000">
             Preview Image: <input type="file" name="img_mini" id="img_mini">

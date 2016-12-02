@@ -49,6 +49,6 @@ if($uploadOk == 0) {
     }
 }
 $dbcon = mysqli_connect($dbserver, $dblogin, $dbpassword, $dbname);
-$postQuery = mysqli_query($dbcon, "INSERT INTO main_news(`id`, `img_mini`, `img_main`, `title`, `small_descr`, `descr`, `timestamp`) VALUES ('', '".$target_file."','".$img_MainPath."','".$titlePost."','".$sDescrPost."','".$descrPost."','".$timestampPost."')");
+$postQuery = mysqli_query($dbcon, "INSERT INTO main_news(`id`, `img_mini`, `img_main`, `title`, `small_descr`, `descr`, `link`, `timestamp`) VALUES ('', '".$target_file."','".$img_MainPath."','".$titlePost."','".$sDescrPost."','".$descrPost."','".$linkData."' ,'".$timestampPost."')");
 header("Refresh: 2, ../main.php");
 echo("News posted, redirecting to a main page");
